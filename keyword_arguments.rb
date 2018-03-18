@@ -8,3 +8,8 @@ class Candidate
     self.birthplace = birthplace
   end
 end
+
+option = { age: 17, occupation: 'blabla', hobby: 'bla', birthplace: 'blablabla' }
+
+foo = Candidate.new('Alex', option)
+puts foo.inspect
