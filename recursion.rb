@@ -1,0 +1,27 @@
+def sum_upto(n)
+  return 1 if n == 1
+  sum_upto(n - 1) + n
+end
+
+def append(ary, n)
+  return ary if n < 0
+  ary << n
+  append(ary, n - 1)
+end
+
+# append([], 0) # => [0]
+# append([], 1) # => [1, 0]
+# append([], 2) # => [2 , 1, 0]
+# append([], 3) # => [3 , 2, 1, 0]
+
+def reverse_append(ary, n)
+  return ary if n < 0
+  reverse_append(ary, n - 1)
+  ary << n
+  ary
+end
+
+p reverse_append([], 6)
+# reverse_append([]), -1 # => []
+# reverse_append([]),  0 # => [0]
+# reverse_append([]),  1 # => [0,1]
