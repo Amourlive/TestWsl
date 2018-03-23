@@ -21,7 +21,13 @@ def reverse_append(ary, n)
   ary
 end
 
-p reverse_append([], 6)
 # reverse_append([]), -1 # => []
 # reverse_append([]),  0 # => [0]
 # reverse_append([]),  1 # => [0,1]
+
+def factorial(n)
+  return 1 if n == 1
+  n * factorial(n - 1)
+end
+
+p factorial(4)
