@@ -30,4 +30,13 @@ def factorial(n)
   n * factorial(n - 1)
 end
 
-p factorial(4)
+def palindrome(string)
+  return true if string.length == 1 || string.length == 0
+  if string[0] == string[-1]
+    palindrome(string[1..-2])
+  else
+    false
+  end
+end
+
+p palindrome('opopo')
