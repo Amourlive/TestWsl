@@ -57,3 +57,26 @@ def fib(n)
     fib(n - 1) + fib(n - 2)
   end
 end
+
+def merge_sort(arr)
+  length = arr.length
+  return arr if length <= 1
+  midpoint = length / 2
+  merge(merge_sort(arr.take(midpoint)), merge_sort(arr.drop(midpoint)))
+end
+
+def merge(arr_left, arr_right)
+  result = []
+  until arr_left.empty? || arr_right.empty?
+    if arr_left.first <= arr_right.first
+      result << arr_left.first
+      arr_left.shift
+    else
+      result << arr_right.first
+      arr_right.shift
+    end
+  end
+  result + arr_left + arr_right
+end
+
+p merge_sort([0, 1, 3, 2, 4, 9, 8, 6, 5, 7])
