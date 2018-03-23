@@ -24,9 +24,7 @@ def bubble_sorting(arr)
   (0..arr.length - 1).each do |i|
     (i + 1..arr.length - 1).each do |j|
       iteration += 1
-      if arr[i] > arr[j]
-        arr[i], arr[j] = arr[j], arr[i]
-      end
+      arr[i], arr[j] = arr[j], arr[i] if arr[i] > arr[j]
     end
   end
   p iteration
